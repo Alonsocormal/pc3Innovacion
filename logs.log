@@ -198,3 +198,41 @@ NameError: name 'prep_pipe' is not defined
     dtypes = prep_pipe.named_steps["dtypes"]
 NameError: name 'prep_pipe' is not defined
 
+2022-07-07 17:34:05,127:INFO:Initializing load_model()
+2022-07-07 17:34:05,144:INFO:load_model(model_name=pickle_model, platform=None, authentication=None, verbose=True)
+2022-07-07 17:34:24,225:INFO:Initializing load_model()
+2022-07-07 17:34:24,226:INFO:load_model(model_name=pickle_model, platform=None, authentication=None, verbose=True)
+2022-07-07 17:34:24,316:INFO:Initializing predict_model()
+2022-07-07 17:34:24,316:INFO:predict_model(estimator=SVC(C=100, kernel='linear'), probability_threshold=None, encoded_labels=True, round=4, verbose=True, ml_usecase=MLUsecase.REGRESSION, display=None)
+2022-07-07 17:34:24,317:INFO:Checking exceptions
+2022-07-07 17:34:24,320:INFO:Preloading libraries
+2022-07-07 17:34:24,320:ERROR:Pipeline not found. Exception:
+2022-07-07 17:34:24,354:ERROR:Traceback (most recent call last):
+  File "D:\Programas\miniconda\app\envs\ApiCrop\lib\site-packages\pycaret\internal\tabular.py", line 8292, in predict_model
+    dtypes = prep_pipe.named_steps["dtypes"]
+NameError: name 'prep_pipe' is not defined
+
+2022-07-07 17:39:49,749:INFO:Initializing load_model()
+2022-07-07 17:39:49,750:INFO:load_model(model_name=pickle_model, platform=None, authentication=None, verbose=True)
+2022-07-07 17:59:09,872:INFO:Initializing load_model()
+2022-07-07 17:59:09,876:INFO:load_model(model_name=pickle_model, platform=None, authentication=None, verbose=True)
+2022-07-07 18:32:48,522:INFO:Initializing predict_model()
+2022-07-07 18:32:48,523:INFO:predict_model(estimator=SVC(C=100, kernel='linear'), probability_threshold=None, encoded_labels=True, round=4, verbose=True, ml_usecase=MLUsecase.REGRESSION, display=None)
+2022-07-07 18:32:48,523:INFO:Checking exceptions
+2022-07-07 18:32:48,524:INFO:Preloading libraries
+2022-07-07 18:32:48,524:ERROR:Pipeline not found. Exception:
+2022-07-07 18:32:48,526:ERROR:Traceback (most recent call last):
+  File "D:\Programas\miniconda\app\envs\ApiCrop\lib\site-packages\pycaret\internal\tabular.py", line 8292, in predict_model
+    dtypes = prep_pipe.named_steps["dtypes"]
+NameError: name 'prep_pipe' is not defined
+
+2022-07-07 18:33:25,705:INFO:Initializing predict_model()
+2022-07-07 18:33:25,706:INFO:predict_model(estimator=SVC(C=100, kernel='linear'), probability_threshold=None, encoded_labels=True, round=4, verbose=True, ml_usecase=MLUsecase.REGRESSION, display=None)
+2022-07-07 18:33:25,706:INFO:Checking exceptions
+2022-07-07 18:33:25,707:INFO:Preloading libraries
+2022-07-07 18:33:25,708:ERROR:Pipeline not found. Exception:
+2022-07-07 18:33:25,708:ERROR:Traceback (most recent call last):
+  File "D:\Programas\miniconda\app\envs\ApiCrop\lib\site-packages\pycaret\internal\tabular.py", line 8292, in predict_model
+    dtypes = prep_pipe.named_steps["dtypes"]
+NameError: name 'prep_pipe' is not defined
+

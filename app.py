@@ -1,14 +1,29 @@
+
 from pycaret.regression import load_model, predict_model
 import streamlit as st
 import pandas as pd
 import numpy as np
+from sklearn.model_selection import train_test_split
+import sklearn
+import pickle
+import numpy as np
+from sklearn import svm
 
-model = load_model('pickle_model')
+df= pd.read_csv("divorce2.csv",sep=';')
+df.head()
+df.describe()
 
-def predict(model, input_df):
-    predictions_df = predict_model(estimator=model, data=input_df)
-    predictions = predictions_df['Class'][0]
-    return predictions
+# Obtenemos variables independientes
+X = df.drop(["Class"],axis = 1)
+# Obtenemos variable dependiente
+Y = df.pop('Class')
+# Separamos datos para ajuste y prueba
+X_train, X_test, y_train, y_test = train_test_split(X, Y, train_size=0.8, test_size=0.2, random_state=100)
+# Creamos el modelo SVM para clasificacion con kernel lineal/rbf y entrenamos el modelo
+model = svm.SVC(kernel='linear', C=100).fit(X_train, y_train)
+# Encontramos el accuracy promedio usando datos de test
+score = model.score(X_test, y_test)
+
 
 def run():
 
@@ -84,9 +99,14 @@ def run():
     resultado=3
 
     if st.button("Predict"):
-        output = predict(model=model, input_df=input_df)
-        output = str(output)
-        resultado=str(output)
+        #output = predict(model=model, input_df=input_df)
+        #output = str(output)
+        #resultado=str(output)
+
+        salida = np.asarray([Atr1,Atr2,Atr3,Atr4,Atr5,Atr6,Atr7,Atr8,Atr9,Atr10,Atr11,Atr12,Atr13,Atr14,Atr15,Atr16,Atr17,Atr18,Atr19,Atr20,Atr21,Atr22,Atr23,Atr24,Atr25,Atr26,Atr27,Atr28,Atr29,Atr30,Atr31,Atr32,Atr33,Atr34,Atr35,Atr36,Atr37,Atr38,Atr39,Atr40,Atr41,Atr42,Atr43,Atr44,Atr45,Atr46,Atr47,Atr48,Atr49,Atr50,Atr51,Atr52,Atr53,Atr54]).reshape(1,-1)
+        predicts = model.predict(salida)
+        resultado=predicts[0]
+        print(resultado)
         
 
     if resultado == 1 : 
@@ -94,7 +114,6 @@ def run():
     elif resultado == 0:
         st.success('PREDICCION: TERAPIA DE PAREJA')
 
-    st.success('The output is {}'.format(output))
 
 
 if __name__ == '__main__':
